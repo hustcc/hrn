@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>hrn is a simple javascript library to format number into human-readable string.</title>
+  <meta name="keywords" content="hrn, human-readable number, format, formatter, number format" />
+  <meta name="description" content="hrn is a simple javascript library to format number into human-readable string." />
+  <style type="text/css">
+  body {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  pre {
+    background-color: #f6dcd7;
+    padding: 10px 15px;
+  }
+  pre.strong {
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <h1> hrn </h1>
+  <p>
+    Project <a href="https://github.com/hustcc/hrn">hrn</a> is short for <strong>H</strong>uman <strong>R</strong>eadable <strong>N</strong>umber, a simple(< 1 Kb) javascript for browserjs / nodejs library to format number into human-readable string.
+  </p>
+  <form>
+    <input type="text" id='number' placeholder="number" value="123456789" />
+    <input type="text" id='fixed' placeholder="fixed" value="3" />
+    <input type="text" id='formatter' placeholder="formatter" value="en" />
+    <input type="button" onclick="javascript: format();" value="HRN format it." />
+    <span id='result'></span>
+  </form>
+  <br />
+  <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- sorry for ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7292810486004926"
+       data-ad-slot="7806394673"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <h2> Install </h2>
+  <pre class="strong">
+npm install hrn </pre>
+  <p> Then import it. </p>
+  <pre>
+// import library use script tag.
+&lt;script type="text/javascript" src="dist/hrn.min.js"&gt;&lt;/script&gt;
+
+// or ES6 style.
+var hrn = require('hrn');</pre>
+
+  <h3>1. Usage</h3>
+  <pre>
+hrn(1234000);                   // '1.2 M'
+hrn(1234000, 3);                // '1.23 M'
+hrn(1234000, 3, 'en');          // '1.23 M'
+hrn(12340, 2, 'zh_CN');         // '1.23 万', `en` / `zh_CN` supported, `en` is default.
+  </pre>
+  <h3>2. Customize formatter</h3>
+  <pre>
+var formatter = ['kmgtpezy'.split(''), 1e3];
+
+hrn('1234000', 0, formatter)    // '1.2 m'
+  </pre>
+  <hr />
+
+  <p>
+    The code of hrn hosted on Github, click <a href="https://github.com/hustcc/hrn">here</a>. Welcome to issue or pull request.
+  </p>
+  <script type="text/javascript" src="dist/hrn.min.js"></script>
+  <script type="text/javascript">
+    function $_(id) {
+      return document.getElementById(id);
+    }
+    function format() {
+      try {
+        $_('result').innerHTML = hrn($_('number').value, $_('fixed').value, $_('formatter').value);
+      }
+      catch(e) {
+        alert('input is not valid.')
+      }
+    }
+  </script>
+</body>
+</html>
