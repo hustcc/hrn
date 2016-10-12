@@ -36,8 +36,8 @@ There is only one API named `hrn(number, fixed, formatter)`.
 
 ```js
 hrn(1234000);                   // '1.2 M'
-hrn(1234000, 3);                // '1.23 M'
-hrn(1234000, 3, 'en');          // '1.23 M'
+hrn(1234000, 3);                // '1.234 M'
+hrn(1234000, 3, 'en');          // '1.234 M'
 hrn(12340, 2, 'zh_CN');         // '1.23 万', `en` / `zh_CN` supported, `en` is default.
 
 ```
@@ -47,7 +47,7 @@ You can customize the number formatter.
 ```js
 var formatter = ['kmgtpezy'.split(''), 1e3];
 
-hrn('1234000', 0, formatter)    // '1.2 m'
+hrn('1234000', 1, formatter)    // '1.2 m'
 ```
 
 # 4. Test
