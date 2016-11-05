@@ -45,9 +45,17 @@ hrn(12340, 2, 'zh_CN');         // '1.23 万', `en` / `zh_CN` supported, `en` is
 You can customize the number formatter.
 
 ```js
+// format number
 var formatter = ['kmgtpezy'.split(''), 1e3];
-
 hrn('1234000', 1, formatter)    // '1.2 m'
+
+
+// format timediff
+formatter = [['s', 'm', 'h', 'd'], [1, 60, 60, 24]];
+hrn(23, 1, formatter);					// '23.0 s'
+hrn(23 * 60, 1, formatter);				// '23.0 m'
+hrn(23 * 60 * 60, 1, formatter);		// '23.0 h'
+hrn(23 * 60 * 60 * 24, 1, formatter); 	// '23.0 d'
 ```
 
 # 4. Test
