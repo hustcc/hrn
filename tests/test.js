@@ -43,5 +43,11 @@ test('hrn show be tested', function (t) {
   var formatter = ['kmgtpezy'.split(''), 1e3];
   t.equal(hrn(1234000000, 1, formatter), '1.2 g');
   
+  formatter = [['s', 'm', 'h', 'd'], [1, 60, 60, 24]];
+  t.equal(hrn(23, 1, formatter), '23.0 s');
+  t.equal(hrn(23 * 60, 1, formatter), '23.0 m');
+  t.equal(hrn(23 * 60 * 60, 1, formatter), '23.0 h');
+  t.equal(hrn(23 * 60 * 60 * 24, 1, formatter), '23.0 d');
+
   t.end();
 });
