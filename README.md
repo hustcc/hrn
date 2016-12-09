@@ -50,12 +50,12 @@ var formatter = ['kmgtpezy'.split(''), 1e3];
 hrn('1234000', 1, formatter)    // '1.2 m'
 
 
-// format timediff
+// format time diff
 formatter = [['s', 'm', 'h', 'd'], [1, 60, 60, 24]];
-hrn(23, 1, formatter);					// '23.0 s'
-hrn(23 * 60, 1, formatter);				// '23.0 m'
-hrn(23 * 60 * 60, 1, formatter);		// '23.0 h'
-hrn(23 * 60 * 60 * 24, 1, formatter); 	// '23.0 d'
+hrn(23, 1, formatter);					// '23.0 s' -> 23 seconds
+hrn(23 * 60, 1, formatter);				// '23.0 m' -> 23 minutes
+hrn(23 * 60 * 60, 1, formatter);		// '23.0 h' -> 23 hours
+hrn(23 * 60 * 60 * 24, 1, formatter); 	// '23.0 d' -> 23 days
 ```
 
 # 4. Test

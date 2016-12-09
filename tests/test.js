@@ -4,6 +4,7 @@ var hrn = require('..');
 
 test('hrn show be tested', function (t) {
   // en KMGTPEZY
+  t.equal(hrn(0), '0.0');
   t.equal(hrn(123), '123.0');
   t.equal(hrn(1234), '1.2 K');
   t.equal(hrn(1234000), '1.2 M');
@@ -24,6 +25,7 @@ test('hrn show be tested', function (t) {
   t.equal(hrn(1234000000000, 3), '1.234 T');
 
   // formatter, zh_CN
+  t.equal(hrn(0, 1, 'zh_CN'), '0.0');
   t.equal(hrn(12, 1, 'zh_CN'), '12.0');
   t.equal(hrn(123, 1, 'zh_CN'), '1.2 百');
   t.equal(hrn(1234, 1, 'zh_CN'), '1.2 千');
@@ -44,6 +46,7 @@ test('hrn show be tested', function (t) {
   t.equal(hrn(1234000000, 1, formatter), '1.2 g');
   
   formatter = [['s', 'm', 'h', 'd'], [1, 60, 60, 24]];
+  t.equal(hrn(0, 1, formatter), '0.0');
   t.equal(hrn(23, 1, formatter), '23.0 s');
   t.equal(hrn(23 * 60, 1, formatter), '23.0 m');
   t.equal(hrn(23 * 60 * 60, 1, formatter), '23.0 h');
