@@ -1,5 +1,7 @@
 .project
 .settings
-
-node_modules/*
-
+.idea
+.DS_Store
+.nyc_output
+coverage
+node_modules

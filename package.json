@@ -1,7 +1,7 @@
 {
   "name": "hrn",
   "officialName": "hrn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "hrn is short for human-readable number, a simple javascript library to format number into human-readable string.",
   "description": "hrn is short for human-readable number, a simple javascript library to format number into human-readable string.",
   "author": {
@@ -17,7 +17,7 @@
     "formatter",
     "number format"
   ],
-  "main": "dist/hrn.min.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hustcc/hrn"
@@ -26,16 +26,15 @@
     "url": "https://github.com/hustcc/hrn/issues"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.2",
-    "gulp-rename": "^1.2.2",
-    "tape": "^4.6.2"
+    "coveralls": "^2.11.6",
+    "expect": "^1.14.0",
+    "mocha": "^2.4.5",
+    "nyc": "^5.6.0",
+    "variable-type": "^0.1.4"
   },
   "scripts": {
-    "lint": "jshint src/hrn.js",
-    "test": "npm run lint && node tests/test.js",
-    "build": "gulp mini && npm run test"
+    "coverage": "nyc npm test && nyc report --reporter=lcov",
+    "test": "mocha test.js"
   },
   "dependencies": {
   }

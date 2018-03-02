@@ -8,18 +8,10 @@
 
 # 1. Install
 
-> **npm install hrn**
+> **npm install --save hrn**
 
 
 # 2. Import It
-
- - `Script` tag.
-
-```html
-<script type="text/javascript" src="dist/hrn.min.js"></script>
-```
-
- - `ES6` style.
 
 ```js
 var hrn = require('hrn');
@@ -58,6 +50,7 @@ hrn(23 * 60 * 60, 1, formatter);		// '23.0 h' -> 23 hours
 hrn(23 * 60 * 60 * 24, 1, formatter); 	// '23.0 d' -> 23 days
 ```
 
+
 # 4. Test
 
 > npm install
@@ -67,4 +60,4 @@ hrn(23 * 60 * 60 * 24, 1, formatter); 	// '23.0 d' -> 23 days
 
 # 5. LICENSE
 
-MIT
+MIT@[hustcc](https://github.com)
