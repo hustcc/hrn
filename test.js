@@ -1,7 +1,5 @@
-'use strict';
 var expect = require('expect');
-
-var hrn = require('.');
+var hrn = require('./index.js');
 
 describe('hrn show be tested', function (t) {
   it('en KMGTPEZY', function () {
